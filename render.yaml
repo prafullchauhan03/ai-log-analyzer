@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: ai-log-analyzer-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        value: sqlite:///./ai_log_analyzer.db
+      - key: GROQ_API_KEY
+        sync: false          # you paste this in Render dashboard
+      - key: GROQ_MODEL
+        value: llama-3.3-70b-versatile
+      - key: ES_TIMEOUT
+        value: 2
+      - key: KAFKA_TIMEOUT
+        value: 2
+      - key: REDIS_TIMEOUT
+        value: 2
+    healthCheckPath: /
