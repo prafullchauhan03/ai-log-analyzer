@@ -8,6 +8,7 @@ pydantic[email]==2.7.1
 python-multipart==0.0.9
 websockets==12.0
 python-dotenv==1.0.1
+psycopg2-binary==2.9.9
 
 # Phase 2 — real service clients
 elasticsearch==8.13.2
