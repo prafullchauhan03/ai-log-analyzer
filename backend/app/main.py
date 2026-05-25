@@ -57,7 +57,8 @@ app.add_middleware(
         "http://localhost:5173",
         "http://localhost:3000",
         # Production origins — update these after deployment
-        "https://ai-log-analyzer.vercel.app",
+        "https://ai-log-analyzer-xi.vercel.app/",
+        
     ],
     allow_credentials=True,
     allow_methods=["*"],
